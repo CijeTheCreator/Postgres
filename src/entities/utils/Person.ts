@@ -18,7 +18,7 @@ export class Person extends BaseEntity {
 
   @Column({
     unique: true,
-    length: 10,
+    length: 19,
   })
   card_number: string;
 }
