@@ -25,9 +25,9 @@ route.post("/api/client/:clientId/transaction", async (req, res) => {
   await transaction.save();
 
   if (type === TransactionTypes.DEPOSIT) {
-    client.balance = client.balance + amount;
+    client.balance = client.balance * 1 + parseInt(amount);
   } else if (type === TransactionTypes.WITHDRAW) {
-    client.balance = client.balance - amount;
+    client.balance = client.balance - parseInt(amount);
   }
 
   await client.save();
