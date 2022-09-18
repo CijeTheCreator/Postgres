@@ -24,7 +24,7 @@ export class Banker extends Person {
   @UpdateDateColumn()
   updated_at: Date;
 
-  @ManyToMany(() => Client)
+  @ManyToMany(() => Client, { cascade: true })
   @JoinTable({
     name: "bankers_clients",
     joinColumn: {
