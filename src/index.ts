@@ -8,6 +8,7 @@ import { createBankerRouter } from "./routes/create_banker";
 import { createTransactionRouter } from "./routes/create_transaction";
 import { connectBankerToClientRouter } from "./routes/connect_banker_to_client";
 import { deleteClientRouter } from "./routes/delete_client";
+import { fetchClientRouter } from "./routes/fetch_clients";
 
 const app = express();
 
@@ -35,6 +36,7 @@ const main = async () => {
     app.use(createTransactionRouter);
     app.use(connectBankerToClientRouter);
     app.use(deleteClientRouter);
+    app.use(fetchClientRouter);
   } catch (error) {
     console.error(error);
     throw new Error("Unable to Connect to db");
